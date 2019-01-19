@@ -34,7 +34,7 @@ echo "==============================================="
 echo "Downloading flash player global $PLAYER_VERSION"
 echo "==============================================="
 
-if ! wget -N "http://download.macromedia.com/get/flashplayer/updaters/$PLAYER_VERSION_MAJOR/playerglobal$PLAYER_VERSION_URL.swc" ; then
+if ! wget -N "https://fpdownload.macromedia.com/get/flashplayer/installers/archive/playerglobal/playerglobal$PLAYER_VERSION_URL.swc" ; then
 	echo "wget exit code: $?"
 	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
 	echo "! FAILED TO DOWNLOAD GLOBAL PLAYER SWC! ELVIS HAS LEFT THE BUILDING! !"
