@@ -34,7 +34,15 @@ echo "==============================================="
 echo "Downloading flash player global $PLAYER_VERSION"
 echo "==============================================="
 
-wget -nc "http://download.macromedia.com/get/flashplayer/updaters/$PLAYER_VERSION_MAJOR/playerglobal$PLAYER_VERSION_URL.swc" -O"$GLOBAL_PLAYER_PATH"
+if ! wget -N "http://download.macromedia.com/get/flashplayer/updaters/$PLAYER_VERSION_MAJOR/playerglobal$PLAYER_VERSION_URL.swc" ; then
+	echo "wget exit code: $?"
+	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	echo "! FAILED TO DOWNLOAD GLOBAL PLAYER SWC! ELVIS HAS LEFT THE BUILDING! !"
+	echo "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+	exit
+fi
+
+cp -v "playerglobal$PLAYER_VERSION_URL.swc" $GLOBAL_PLAYER_PATH
 
 cd ..
 
@@ -52,4 +60,6 @@ echo "==============================================="
 
 mkdir -p /vagrant/bin/
 cp -r flex /vagrant/bin/
+# Remove it after copy so re-runs will not download the file repeatedly
+rm /vagrant/bin/flex/playerglobal*
 cp flashplayer /vagrant/bin/
