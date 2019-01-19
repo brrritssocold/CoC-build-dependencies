@@ -10,6 +10,8 @@ Contains build dependencies for the Corruption-of-Champions-Mod CI build
 - Vagrant
 - Virtualbox
 
+*If you are using chocolaty on Windows, you can install the dependencies using `choco install vagrant virtualbox -y`*
+
 ## Usage
 - **PowerShell or Command prompt are recommended on windows, Git Bash has issues with the interactive shell**
 - In the repository root, run `vagrant up` to start and provision the VM
