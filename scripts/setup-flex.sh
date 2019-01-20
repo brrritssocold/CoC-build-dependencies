@@ -51,7 +51,7 @@ echo "Downloading flash player for Linux"
 echo "==============================================="
 
 # Setup flash player. You read that right! Flash player for linux is back!
-wget -N https://fpdownload.macromedia.com/pub/labs/flashruntimes/flashplayer/linux64/flash_player_sa_linux.x86_64.tar.gz
+wget -N https://fpdownload.macromedia.com/pub/flashplayer/updaters/32/flash_player_sa_linux_debug.x86_64.tar.gz
 tar zxf flash_player*
 
 echo "==============================================="
@@ -62,4 +62,4 @@ mkdir -p /vagrant/bin/
 cp -r flex /vagrant/bin/
 # Remove it after copy so re-runs will not download the file repeatedly
 rm /vagrant/bin/flex/playerglobal*
-cp flashplayer /vagrant/bin/
+cp flashplayerdebugger /vagrant/bin/flashplayer
